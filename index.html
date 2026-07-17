@@ -110,7 +110,18 @@
       flex-direction: column;
       z-index: 100;
     }
-    .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu { display: flex; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      color: var(--text);
+      line-height: 1;
+    }
     .nav-dropdown-menu a {
       padding: 0.6rem 0.85rem;
       border-radius: 8px;
@@ -426,8 +437,40 @@
     }
     @media (max-width: 760px) {
       .page { padding: 1rem 0 3rem; }
-      header { justify-content: center; text-align: center; }
-      nav { justify-content: center; }
+      header { flex-wrap: wrap; }
+      .nav-toggle { display: block; }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: 0 4px 16px rgba(15,23,42,0.1);
+        gap: 0.25rem;
+      }
+      nav.open { display: flex; }
+      nav > a, .nav-dropdown > a {
+        padding: 0.6rem 0.75rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        display: block;
+      }
+      nav > a:hover, .nav-dropdown > a:hover { background: #f5f7fb; }
+      .nav-dropdown { width: 100%; }
+      .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: #f0f4f8;
+        border-radius: 12px;
+        padding: 0.4rem;
+        margin-top: 0.25rem;
+        display: none;
+      }
+      .nav-dropdown:hover .nav-dropdown-menu { display: none; }
+      .nav-dropdown.open .nav-dropdown-menu { display: flex; }
       .hero { border-radius: 24px; }
       .contact-details { grid-template-columns: 1fr; }
     }
@@ -445,6 +488,7 @@
           <p>Glendale, California | Healthcare career training</p>
         </div>
       </div>
+      <button class="nav-toggle" aria-label="Open navigation menu">&#9776;</button>
       <nav>
         <a href="amhsinc_modern_index.html">Home</a>
         <div class="nav-dropdown">
@@ -618,6 +662,22 @@
       </p>
     </footer>
   </main>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+    navToggle?.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      navToggle.textContent = nav.classList.contains('open') ? '\u2715' : '\u2630';
+    });
+    document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
+      trigger.addEventListener('click', e => {
+        if (window.innerWidth <= 760) {
+          e.preventDefault();
+          trigger.closest('.nav-dropdown').classList.toggle('open');
+        }
+      });
+    });
+  </script>
   <script>
     ['catalog_comb.pdf','spfs_comb.pdf','arep.pdf'].forEach(function(f){
       fetch(f,{method:'HEAD'}).then(function(r){if(!r.ok)hideDoc(f);}).catch(function(){hideDoc(f);});
