@@ -591,12 +591,6 @@
     </footer>
   </main>
   <script>
-    ['catalog_comb.pdf','spfs_comb.pdf','arep.pdf'].forEach(function(f){
-      fetch(f,{method:'HEAD'}).then(function(r){if(!r.ok)hideDoc(f);}).catch(function(){hideDoc(f);});
-    });
-    function hideDoc(f){var a=document.querySelector('a[href="'+f+'"]');if(a)a.style.display='none';}
-  </script>
-  <script>
     const navToggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
     navToggle?.addEventListener('click', () => {

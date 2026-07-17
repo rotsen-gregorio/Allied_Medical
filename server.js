@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'amhs2024admin';
 
 const DOCUMENT_FILES = {
   catalog: 'catalog_comb.pdf',
@@ -79,6 +79,13 @@ app.post('/admin/upload', (req, res) => {
     console.log(`[${new Date().toISOString()}] Updated: ${req.file.filename}`);
     res.json({ success: true, message: `${req.file.filename} updated successfully` });
   });
+});
+
+app.use((req, res) => {
+  if (req.path.endsWith('.pdf')) {
+    return res.status(404).send(`<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document Unavailable</title><style>body{font-family:sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;background:#f5f5f5;color:#333}h1{font-size:1.4rem;margin-bottom:0.5rem}p{margin:0 0 1.5rem}a{color:#1a5276;text-decoration:underline}</style></head><body><h1>Document Temporarily Unavailable</h1><p>This document has not been uploaded yet. Please check back later.</p><a href="/">Return to Home</a></body></html>`);
+  }
+  res.redirect('/');
 });
 
 app.listen(PORT, () => {
