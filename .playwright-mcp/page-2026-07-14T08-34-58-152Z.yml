@@ -1,8 +1,0 @@
-- generic [active] [ref=f3e1]:
-  - generic [ref=f3e2]:
-    - paragraph [ref=f3e11]: Redirecting to Turbify login.
-    - img "logo" [ref=f3e16]
-  - generic [ref=f3e17]:
-    - text: Copyright© 2026 cPanel, L.L.C.
-    - link "Privacy Policy" [ref=f3e18] [cursor=pointer]:
-      - /url: https://go.cpanel.net/privacy
