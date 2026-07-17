@@ -337,10 +337,24 @@
       .nav-dropdown:hover .nav-dropdown-menu { display: none; }
       .nav-dropdown.open .nav-dropdown-menu { display: flex; }
     }
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: var(--primary, #1e40af);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      z-index: 9999;
+      border-radius: 0 0 8px 0;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .skip-link:focus { top: 0; }
   </style>
 </head>
 <body>
-  <main class="page">
+  <main class="page" id="main-content" id="main-content">
     <header>
       <div class="brand">
         <div class="brand-logo">
@@ -382,14 +396,14 @@
     <section class="content-section">
       <div class="schedule-group">
         <div class="schedule-group-head">
-          <h3>Nursing Assistant<sup>**</sup></h3>
+          <h2>Nursing Assistant<sup>**</sup></h2>
           <span class="price">$2,000.00<sup>*</sup></span>
         </div>
         <table class="schedule-table">
-          <thead>
+          <th scope="col"ead>
             <tr>
-              <th>Dates</th>
-              <th>Class Hours</th>
+              <th scope="col">Dates</th>
+              <th scope="col">Class Hours</th>
             </tr>
           </thead>
           <tbody>
@@ -415,14 +429,14 @@
 
       <div class="schedule-group">
         <div class="schedule-group-head">
-          <h3>Home Health Aide<sup>**</sup></h3>
+          <h2>Home Health Aide<sup>**</sup></h2>
           <span class="price">$350.00<sup>*</sup></span>
         </div>
         <table class="schedule-table">
-          <thead>
+          <th scope="col"ead>
             <tr>
-              <th>Dates</th>
-              <th>Class Hours</th>
+              <th scope="col">Dates</th>
+              <th scope="col">Class Hours</th>
             </tr>
           </thead>
           <tbody>
@@ -444,14 +458,14 @@
 
       <div class="schedule-group">
         <div class="schedule-group-head">
-          <h3>Phlebotomy Technician I</h3>
+          <h2>Phlebotomy Technician I</h2>
           <span class="price">$1,500.00</span>
         </div>
         <table class="schedule-table">
-          <thead>
+          <th scope="col"ead>
             <tr>
-              <th>Program</th>
-              <th>Dates &amp; Schedule</th>
+              <th scope="col">Program</th>
+              <th scope="col">Dates &amp; Schedule</th>
             </tr>
           </thead>
           <tbody>
@@ -473,14 +487,14 @@
 
       <div class="schedule-group">
         <div class="schedule-group-head">
-          <h3>Vocational Nursing (VN) Program<sup>**</sup></h3>
+          <h2>Vocational Nursing (VN) Program<sup>**</sup></h2>
           <span class="price">$23,000.00<sup>*</sup></span>
         </div>
         <table class="schedule-table">
-          <thead>
+          <th scope="col"ead>
             <tr>
-              <th>Dates</th>
-              <th>Class Hours</th>
+              <th scope="col">Dates</th>
+              <th scope="col">Class Hours</th>
             </tr>
           </thead>
           <tbody>
@@ -497,7 +511,7 @@
       </div>
 
       <div class="schedule-info">
-        <h3>Enrollment &amp; Payment Information</h3>
+        <h2>Enrollment &amp; Payment Information</h2>
         <ul>
           <li>Enrollment for NA and PT-1 courses must be completed 10 days before the start of class.</li>
           <li>Form of payment accepted: Cash / Check / Money Order.</li>
