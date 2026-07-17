@@ -4,7 +4,7 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'amhs2024admin';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 const DOCUMENT_FILES = {
   catalog: 'catalog_comb.pdf',
