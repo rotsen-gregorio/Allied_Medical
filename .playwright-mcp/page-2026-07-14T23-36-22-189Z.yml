@@ -1,0 +1,14 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - img "AMHS Inc logo" [ref=e5]
+    - generic [ref=e6]:
+      - generic [ref=e7]: AMHS Inc
+      - generic [ref=e8]: Admin Portal
+  - heading "Sign In" [level=1] [ref=e9]
+  - paragraph [ref=e10]: Enter your admin password to manage school documents.
+  - generic [ref=e11]: Password
+  - textbox "Password" [ref=e12]:
+    - /placeholder: Admin password
+  - button "Sign In" [ref=e13] [cursor=pointer]
+  - link "← Back to website" [ref=e14] [cursor=pointer]:
+    - /url: amhsinc_modern_index.html

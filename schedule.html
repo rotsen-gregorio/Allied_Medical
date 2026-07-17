@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Schedule - Allied Medical & Health Services, Inc.</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --surface-alt: #e2e8f0;
+      --surface-strong: #1f2937;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0f62fe;
+      --primary-soft: #dbeafe;
+      --accent: #0f62fe;
+      --border: rgba(15, 23, 42, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f5f7fb;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .page {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .brand {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.14);
+      box-shadow: 0 16px 32px rgba(15,23,42,0.1);
+    }
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .brand-text {
+      display: grid;
+      gap: 0.08rem;
+    }
+    .brand-text p:first-child {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .brand-text p:last-child {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--text); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+      min-width: 210px;
+      padding: 0.5rem 0.4rem 0.4rem;
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
+    .nav-dropdown-menu a {
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { background: #f5f7fb; text-decoration: none; color: var(--text); }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .hero {
+      display: grid;
+      gap: 2rem;
+      padding: 2.5rem;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #0f62fe 0%, #0f62fe 100%);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      z-index: 1;
+      color: #f8fafc;
+      display: grid;
+      gap: 1.2rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4vw, 4.25rem);
+      line-height: 0.95;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.84);
+      font-size: 1.05rem;
+    }
+    .content-section {
+      margin: 3rem 0;
+    }
+    .content-section h2 {
+      font-size: 2rem;
+      margin: 0 0 1.5rem;
+      color: var(--surface-strong);
+    }
+    .content-section p {
+      margin: 1rem 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .schedule-group {
+      margin: 2rem 0;
+    }
+    .schedule-group-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .schedule-group-head h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: var(--surface-strong);
+    }
+    .schedule-group-head .price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.05);
+    }
+    .schedule-table th {
+      text-align: left;
+      background: var(--surface-strong);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.9rem 1.2rem;
+    }
+    .schedule-table td {
+      padding: 0.9rem 1.2rem;
+      border-top: 1px solid rgba(15,23,42,0.08);
+      color: var(--text);
+      font-size: 0.98rem;
+      vertical-align: top;
+    }
+    .schedule-table td:first-child {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .schedule-table td:last-child {
+      color: var(--muted);
+    }
+    .schedule-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    .schedule-note {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .schedule-info {
+      background: #f0f9ff;
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2.5rem 0;
+    }
+    .schedule-info h3 {
+      margin: 0 0 0.75rem;
+      color: var(--surface-strong);
+    }
+    .schedule-info ul {
+      margin: 0;
+      padding-left: 1.5rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .schedule-info li { margin: 0.4rem 0; line-height: 1.7; }
+    .schedule-info a { color: var(--primary); font-weight: 600; text-decoration: underline; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(15,23,42,0.08);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 980px) {
+      .hero { padding: 2rem; }
+      .hero h1 { font-size: 3rem; }
+    }
+    @media (max-width: 760px) {
+      .page { padding: 1rem 0 3rem; }
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; }
+      .hero { border-radius: 24px; }
+      .schedule-table td:first-child { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="amhs-logo.png" alt="AMHS logo" />
+        </div>
+        <div class="brand-text">
+          <p>Allied Medical &amp; Health Services, Inc.</p>
+          <p>Glendale, California | Healthcare career training</p>
+        </div>
+      </div>
+      <nav>
+        <a href="amhsinc_modern_index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="amhsinc_modern_index.html#programs">Programs Offered ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="vocational-nursing.html">Vocational Nursing</a>
+            <a href="phlebotomy-technician.html">Phlebotomy Technician I</a>
+            <a href="nursing-assistant.html">Nursing Assistant</a>
+            <a href="ceu-for-cna.html">CEU for CNA</a>
+          </div>
+        </div>
+        <a href="schedule.html">Schedule</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <a href="amhsinc_modern_index.html" class="back-link">← Back to Home</a>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Class Schedule</span>
+        <h1>Upcoming Class Schedule</h1>
+        <p>Review start dates, class hours, and tuition for our healthcare training programs. Fees and class schedules are subject to change — contact School Administration for the latest updates.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="schedule-group">
+        <div class="schedule-group-head">
+          <h3>Nursing Assistant<sup>**</sup></h3>
+          <span class="price">$2,000.00<sup>*</sup></span>
+        </div>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Class Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jan 10, 2026 – Mar 28, 2026 (Sat–Sun)</td>
+              <td>Clinical: 7am–3pm &nbsp;|&nbsp; Lecture: 9am–4pm</td>
+            </tr>
+            <tr>
+              <td>Mar 29, 2026 – Jun 20, 2026 (Sat–Sun)</td>
+              <td>Clinical: 7am–3pm &nbsp;|&nbsp; Lecture: 9am–4pm</td>
+            </tr>
+            <tr>
+              <td>Jun 21, 2026 – Sep 19, 2026 (Sat–Sun)</td>
+              <td>Clinical: 7am–3pm &nbsp;|&nbsp; Lecture: 9am–4pm</td>
+            </tr>
+            <tr>
+              <td>Sep 20, 2026 – Dec 19, 2026 (Sat–Sun)</td>
+              <td>Clinical: 7am–3pm &nbsp;|&nbsp; Lecture: 9am–4pm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="schedule-group">
+        <div class="schedule-group-head">
+          <h3>Home Health Aide<sup>**</sup></h3>
+          <span class="price">$350.00<sup>*</sup></span>
+        </div>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Class Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jan 7, 2026 – Jan 13, 2026</td>
+              <td>Wed / Thur / Sat / Sun (Call for class hours)</td>
+            </tr>
+            <tr>
+              <td>Apr 1, 2026 – Apr 7, 2026</td>
+              <td>Wed / Thur / Sat / Sun (Call for class hours)</td>
+            </tr>
+            <tr>
+              <td>Jun 24, 2026 – Jun 30, 2026</td>
+              <td>Wed / Thur / Sat / Sun (Call for class hours)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="schedule-group">
+        <div class="schedule-group-head">
+          <h3>Phlebotomy Technician I</h3>
+          <span class="price">$1,500.00</span>
+        </div>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Program</th>
+              <th>Dates &amp; Schedule</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PT-1 Limited (Basic) Phlebotomy<sup>**</sup></td>
+              <td>Feb 10 – Feb 21, 2026 &nbsp;|&nbsp; Call for schedule update</td>
+            </tr>
+            <tr>
+              <td>PT-1 Advanced Phlebotomy</td>
+              <td>Mar 3 – Jun 20, 2026 &nbsp;|&nbsp; Call for schedule update</td>
+            </tr>
+            <tr>
+              <td>PT-1 Advanced Phlebotomy / Clinical Externship</td>
+              <td>Tentative — call for schedule update</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="schedule-group">
+        <div class="schedule-group-head">
+          <h3>Vocational Nursing (VN) Program<sup>**</sup></h3>
+          <span class="price">$23,000.00<sup>*</sup></span>
+        </div>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Dates</th>
+              <th>Class Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jan 15, 2026 – Jun 8, 2027 (proposed date)</td>
+              <td>Sat: 7am–3pm &nbsp;|&nbsp; Mon: 3pm–9pm &nbsp;|&nbsp; Tue: 3pm–9pm</td>
+            </tr>
+            <tr>
+              <td>Jul 16, 2026 – Dec 16, 2027 (proposed date)</td>
+              <td>Thu: 3pm–10pm &nbsp;|&nbsp; Fri: 3pm–10pm &nbsp;|&nbsp; Sat: 7am–3pm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="schedule-info">
+        <h3>Enrollment &amp; Payment Information</h3>
+        <ul>
+          <li>Enrollment for NA and PT-1 courses must be completed 10 days before the start of class.</li>
+          <li>Form of payment accepted: Cash / Check / Money Order.</li>
+          <li><sup>*</sup> Fees and class schedule are subject to change.</li>
+          <li><sup>**</sup> Programs marked with (**) have requirements or class schedule flexibility.</li>
+          <li>Contact the <a href="contact-us.html">School Administration</a> for the latest fees and class schedule at <a href="tel:8186377871">(818) 637-7871</a>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Allied Medical &amp; Health Services, Inc. — All rights reserved.</p>
+      <p>730 S Central Ave, Ste 208 | Glendale, CA 91204</p>
+      <p>Office Hours: M/T/Th/F 9am–7pm, Saturday 9am–4pm</p>
+      <p style="flex-basis:100%;display:flex;flex-wrap:wrap;gap:1.25rem;margin:0;">
+        <a href="catalog_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Catalog</a>
+        <a href="spfs_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Performance Fact Sheet</a>
+        <a href="arep.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">Annual Report</a>
+        <a href="login.html" style="margin-left:auto;font-size:0.8rem;opacity:0.5;text-decoration:underline;">Admin Login</a>
+      </p>
+    </footer>
+  </main>
+  <script>
+    ['catalog_comb.pdf','spfs_comb.pdf','arep.pdf'].forEach(function(f){
+      fetch(f,{method:'HEAD'}).then(function(r){if(!r.ok)hideDoc(f);}).catch(function(){hideDoc(f);});
+    });
+    function hideDoc(f){var a=document.querySelector('a[href="'+f+'"]');if(a)a.style.display='none';}
+  </script>
+</body>
+</html>

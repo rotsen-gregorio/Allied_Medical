@@ -1,0 +1,113 @@
+- main [ref=f102e2]:
+  - generic [ref=f102e3]:
+    - generic [ref=f102e4]:
+      - img "AMHS logo" [ref=f102e6]
+      - generic [ref=f102e7]:
+        - paragraph [ref=f102e8]: Allied Medical & Health Services, Inc.
+        - paragraph [ref=f102e9]: Glendale, California | Healthcare career training
+    - navigation [ref=f102e10]:
+      - link "Home" [ref=f102e11] [cursor=pointer]:
+        - /url: amhsinc_modern_index.html
+      - link "Programs" [ref=f102e12] [cursor=pointer]:
+        - /url: amhsinc_modern_index.html#programs
+      - link "About Us" [ref=f102e13] [cursor=pointer]:
+        - /url: amhsinc_modern_index.html#about
+      - link "Contact Us" [ref=f102e14] [cursor=pointer]:
+        - /url: amhsinc_modern_index.html#contact
+  - link "← Back to Home" [ref=f102e15] [cursor=pointer]:
+    - /url: amhsinc_modern_index.html
+  - generic [ref=f102e17]:
+    - generic [ref=f102e18]: CEU for CNA Program
+    - heading "Maintain Your Certification" [level=1] [ref=f102e19]
+    - paragraph [ref=f102e20]: Continuing education for certified nursing assistants. Stay current with professional requirements and expand your healthcare knowledge.
+    - link "Call to Enroll" [ref=f102e22] [cursor=pointer]:
+      - /url: tel:8186377871
+  - generic [ref=f102e23]:
+    - heading "About CNA Continuing Education" [level=2] [ref=f102e24]
+    - paragraph [ref=f102e25]: Continuing Education Units (CEUs) are essential for maintaining your Certified Nursing Assistant certification. Our CEU program is designed to help certified nursing assistants meet their professional development requirements while staying current with the latest healthcare practices and standards.
+    - paragraph [ref=f102e27]:
+      - text: 📅 Available only on
+      - strong [ref=f102e28]: Monday, Thursday
+      - text: and
+      - strong [ref=f102e29]: Friday
+  - generic [ref=f102e30]:
+    - heading "Program Schedule" [level=2] [ref=f102e31]
+    - paragraph [ref=f102e32]: "Flexible class times designed to fit your work schedule. Review the complete CEU schedule below:"
+    - table [ref=f102e34]:
+      - rowgroup [ref=f102e35]:
+        - row [ref=f102e36]:
+          - columnheader "Course Code" [ref=f102e37]
+          - columnheader "Course Title" [ref=f102e38]
+          - columnheader "Date" [ref=f102e39]
+          - columnheader "Days" [ref=f102e40]
+          - columnheader "Time" [ref=f102e41]
+          - columnheader "Hours" [ref=f102e42]
+      - rowgroup [ref=f102e43]:
+        - row [ref=f102e44]:
+          - cell "CEU-001" [ref=f102e45]
+          - cell "Patient Safety & Infection Control" [ref=f102e46]
+          - cell "Contact for dates" [ref=f102e47]
+          - cell "Monday, Thursday, Friday" [ref=f102e48]
+          - cell "See schedule" [ref=f102e49]
+          - cell "4" [ref=f102e50]
+        - row [ref=f102e51]:
+          - cell "CEU-002" [ref=f102e52]
+          - cell "Communication & Patient Care" [ref=f102e53]
+          - cell "Contact for dates" [ref=f102e54]
+          - cell "Monday, Thursday, Friday" [ref=f102e55]
+          - cell "See schedule" [ref=f102e56]
+          - cell "4" [ref=f102e57]
+        - row [ref=f102e58]:
+          - cell "CEU-003" [ref=f102e59]
+          - cell "Professional Ethics & Standards" [ref=f102e60]
+          - cell "Contact for dates" [ref=f102e61]
+          - cell "Monday, Thursday, Friday" [ref=f102e62]
+          - cell "See schedule" [ref=f102e63]
+          - cell "4" [ref=f102e64]
+    - paragraph [ref=f102e65]:
+      - emphasis [ref=f102e66]: For the complete and most current CEU schedule, please contact our admissions team at (818) 637-7871 or email info@amhsinc.com
+  - generic [ref=f102e67]:
+    - heading "Why Choose Our CEU Program?" [level=2] [ref=f102e68]
+    - generic [ref=f102e69]:
+      - generic [ref=f102e70]:
+        - heading "Convenient Scheduling" [level=3] [ref=f102e71]
+        - paragraph [ref=f102e72]:
+          - text: Classes available
+          - strong [ref=f102e73]: Monday, Thursday, and Friday
+          - text: to work around your healthcare career schedule.
+      - generic [ref=f102e74]:
+        - heading "Expert Instructors" [level=3] [ref=f102e75]
+        - paragraph [ref=f102e76]: Learn from experienced healthcare professionals with extensive clinical experience in various healthcare settings.
+      - generic [ref=f102e77]:
+        - heading "Professional Development" [level=3] [ref=f102e78]
+        - paragraph [ref=f102e79]: Stay current with industry standards, best practices, and the latest healthcare regulations and guidelines.
+      - generic [ref=f102e80]:
+        - heading "Affordable Pricing" [level=3] [ref=f102e81]
+        - paragraph [ref=f102e82]: Competitive CEU rates to help you maintain your certification without breaking your budget.
+      - generic [ref=f102e83]:
+        - heading "Certification Recognized" [level=3] [ref=f102e84]
+        - paragraph [ref=f102e85]: Our CEU courses are recognized and accepted for continuing education credit requirements.
+      - generic [ref=f102e86]:
+        - heading "Flexible Format" [level=3] [ref=f102e87]
+        - paragraph [ref=f102e88]: Complete CEU requirements on your own schedule with our flexible class options.
+  - generic [ref=f102e89]:
+    - heading "Enrollment Process" [level=2] [ref=f102e90]
+    - paragraph [ref=f102e91]: "Enrolling in our CEU program is simple and straightforward:"
+    - list [ref=f102e92]:
+      - listitem [ref=f102e93]: Contact our admissions team
+      - listitem [ref=f102e94]: Review available CEU course options
+      - listitem [ref=f102e95]: Select your preferred class schedule
+      - listitem [ref=f102e96]: Complete registration and payment
+      - listitem [ref=f102e97]: Attend your CEU classes
+      - listitem [ref=f102e98]: Receive your certificate of completion
+  - generic [ref=f102e99]:
+    - heading "Ready to Maintain Your CNA Certification?" [level=2] [ref=f102e100]
+    - paragraph [ref=f102e101]: Contact our admissions team to learn about current CEU course offerings and schedule your continuing education classes.
+    - generic [ref=f102e102]:
+      - 'link "Call: (818) 637-7871" [ref=f102e103] [cursor=pointer]':
+        - /url: tel:8186377871
+      - 'link "Email: info@amhsinc.com" [ref=f102e104] [cursor=pointer]':
+        - /url: mailto:info@amhsinc.com
+  - generic [ref=f102e105]:
+    - paragraph [ref=f102e106]: Allied Medical & Health Services, Inc. — All rights reserved.
+    - paragraph [ref=f102e107]: "Office Hours: M/T/Th/F 9am–7pm, Saturday 9am–4pm"

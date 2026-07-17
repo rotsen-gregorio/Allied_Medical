@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Allied Medical & Health Services, Inc.</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --surface-alt: #e2e8f0;
+      --surface-strong: #1f2937;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0f62fe;
+      --primary-soft: #dbeafe;
+      --accent: #0f62fe;
+      --border: rgba(15, 23, 42, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f5f7fb;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .page {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .brand {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.14);
+      box-shadow: 0 16px 32px rgba(15,23,42,0.1);
+    }
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .brand-text {
+      display: grid;
+      gap: 0.08rem;
+    }
+    .brand-text p:first-child {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .brand-text p:last-child {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--text); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+      min-width: 210px;
+      padding: 0.5rem 0.4rem 0.4rem;
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
+    .nav-dropdown-menu a {
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { background: #f5f7fb; text-decoration: none; color: var(--text); }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .hero {
+      display: grid;
+      gap: 2rem;
+      padding: 2.5rem;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #172c46 0%, #0f62fe 100%);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      z-index: 1;
+      color: #f8fafc;
+      display: grid;
+      gap: 1.2rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4vw, 4.25rem);
+      line-height: 0.95;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.84);
+      font-size: 1.05rem;
+    }
+    .content-section {
+      margin: 3rem 0;
+    }
+    .content-section h2 {
+      font-size: 2rem;
+      margin: 0 0 1.5rem;
+      color: var(--surface-strong);
+    }
+    .content-section h3 {
+      font-size: 1.3rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--surface-strong);
+    }
+    .contact-block {
+      padding: 2rem;
+      border-radius: 28px;
+      background: #172c46;
+      color: #fff;
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .contact-block-heading {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .contact-block > p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .contact-card {
+      display: grid;
+      gap: 1rem;
+      padding: 1.4rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .contact-card h3 {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: #fff;
+      font-size: 0.98rem;
+      line-height: 1.4;
+    }
+    .contact-icon {
+      width: 2.15rem;
+      height: 2.15rem;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-info {
+      display: grid;
+      gap: 0.3rem;
+    }
+    .contact-info p {
+      margin: 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.95rem;
+    }
+    .contact-info a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    .contact-card a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .address-card {
+      display: grid;
+      gap: 1rem;
+      padding: 1.4rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .address-card dt {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    .address-card dd {
+      margin: 0.55rem 0 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .map-container {
+      width: 100%;
+      height: 240px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0f172a;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .form-section {
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.05);
+      margin: 2rem 0;
+    }
+    .form-group {
+      margin: 1.5rem 0;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--surface-strong);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(15,23,42,0.12);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: #f8fafc;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #ffffff;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 1rem 1.7rem;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-secondary {
+      background: #e2e8f0;
+      color: var(--surface-strong);
+    }
+    .coordinators-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .coordinator-card {
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+    }
+    .coordinator-card h4 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      color: var(--surface-strong);
+    }
+    .coordinator-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .coordinator-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .coordinator-card a:hover { text-decoration: underline; }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.05);
+    }
+    .info-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      color: var(--surface-strong);
+    }
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(15,23,42,0.08);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    .coord-block {
+      padding: 2rem;
+      border-radius: 28px;
+      background: #172c46;
+      color: #fff;
+      display: grid;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .coord-block-intro h2 { margin: 0 0 0.5rem; font-size: 1.4rem; color: #fff; }
+    .coord-block-intro p { margin: 0; color: rgba(255,255,255,0.75); font-size: 0.98rem; }
+    .coord-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .coord-card {
+      display: grid;
+      gap: 1rem;
+      padding: 1.4rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .coord-card-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+    .coord-card h3 { margin: 0; font-size: 1.05rem; color: #fff; font-weight: 800; }
+    .coord-card-role { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin: -0.5rem 0 0; }
+    .coord-divider { height: 1px; background: rgba(255,255,255,0.1); }
+    .coord-detail { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; }
+    .coord-detail-icon {
+      width: 1.8rem;
+      height: 1.8rem;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .coord-detail a { color: #fff; text-decoration: underline; font-weight: 600; overflow-wrap: anywhere; }
+    .coord-detail span { color: rgba(255,255,255,0.82); }
+    @media (max-width: 980px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .coordinators-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .page { padding: 1rem 0 3rem; }
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; }
+      .hero { border-radius: 24px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .form-actions { flex-direction: column; }
+      .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="amhs-logo.png" alt="AMHS logo" />
+        </div>
+        <div class="brand-text">
+          <p>Allied Medical &amp; Health Services, Inc.</p>
+          <p>Glendale, California | Healthcare career training</p>
+        </div>
+      </div>
+      <nav>
+        <a href="amhsinc_modern_index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="amhsinc_modern_index.html#programs">Programs Offered ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="vocational-nursing.html">Vocational Nursing</a>
+            <a href="phlebotomy-technician.html">Phlebotomy Technician I</a>
+            <a href="nursing-assistant.html">Nursing Assistant</a>
+            <a href="ceu-for-cna.html">CEU for CNA</a>
+          </div>
+        </div>
+        <a href="schedule.html">Schedule</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <a href="amhsinc_modern_index.html" class="back-link">← Back to Home</a>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Get In Touch</span>
+        <h1>Ready to start your healthcare training?</h1>
+        <p>Reach out now for enrollment details, program guidance, and class schedules. Our team is available to help you find the course that fits your career goals.</p>
+      </div>
+    </section>
+
+    <div class="contact-block">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact</h3>
+
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div class="contact-info">
+              <p>730 S Central Ave Ste 208</p>
+              <p>Glendale, CA 91204</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div class="contact-info">
+              <a href="tel:8186377871">(818) 637-7871</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">📠</span>
+            <div class="contact-info">
+              <p>Fax: (818) 637-2104</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-info">
+              <a href="mailto:info@amhsinc.com">info@amhsinc.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">f</span>
+            <div class="contact-info">
+              <a href="https://www.facebook.com/AMHSinc" target="_blank" rel="noopener">Facebook / AMHSinc</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="address-card">
+          <div>
+            <dt>Address</dt>
+            <dd>730 S Central Ave Ste 208<br>Glendale, CA 91204</dd>
+          </div>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.5274897893286!2d-118.25517!3d34.1450!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0b5f5f5f5f5%3A0x0!2s730%20S%20Central%20Ave%2C%20Glendale%2C%20CA%2091204!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="content-section">
+      <h2>Contact Form</h2>
+      <p>For general inquiries, please fill out the form below and we'll get back to you as soon as possible.</p>
+      <form class="form-section" action="mailto:info@amhsinc.com" method="POST" enctype="text/plain">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Mobile Phone *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="company">Company / School</label>
+          <input type="text" id="company" name="company">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Comments / Message *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="button">Submit Your Message</button>
+          <button type="reset" class="button button-secondary">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="coord-block">
+      <div class="coord-block-intro">
+        <h2>Program Coordinators</h2>
+        <p>For specific questions about each program, reach out directly to the program coordinator.</p>
+      </div>
+      <div class="coord-grid">
+        <div class="coord-card">
+          <div>
+            <div class="coord-card-label">Program</div>
+            <h3>Vocational Nursing</h3>
+            <p class="coord-card-role">LVN Coordinator</p>
+          </div>
+          <div class="coord-divider"></div>
+          <div class="coord-detail">
+            <span class="coord-detail-icon">✉️</span>
+            <a href="mailto:lvn@amhsinc.com">lvn@amhsinc.com</a>
+          </div>
+        </div>
+        <div class="coord-card">
+          <div>
+            <div class="coord-card-label">Program</div>
+            <h3>Phlebotomy Technician</h3>
+            <p class="coord-card-role">Phlebotomy Coordinator</p>
+          </div>
+          <div class="coord-divider"></div>
+          <div class="coord-detail">
+            <span class="coord-detail-icon">✉️</span>
+            <a href="mailto:phlebotomy@amhsinc.com">phlebotomy@<wbr>amhsinc.com</a>
+          </div>
+        </div>
+        <div class="coord-card">
+          <div>
+            <div class="coord-card-label">Program</div>
+            <h3>Nursing Assistant</h3>
+            <p class="coord-card-role">NA Coordinator</p>
+          </div>
+          <div class="coord-divider"></div>
+          <div class="coord-detail">
+            <span class="coord-detail-icon">✉️</span>
+            <a href="mailto:cna@amhsinc.com">cna@amhsinc.com</a>
+          </div>
+        </div>
+        <div class="coord-card">
+          <div>
+            <div class="coord-card-label">Department</div>
+            <h3>School Administration</h3>
+            <p class="coord-card-role">School Administrator</p>
+          </div>
+          <div class="coord-divider"></div>
+          <div class="coord-detail">
+            <span class="coord-detail-icon">✉️</span>
+            <a href="mailto:admin@amhsinc.com">admin@amhsinc.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="content-section">
+      <h2>Office Hours</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Monday, Tuesday, Thursday, Friday</h3>
+          <p>9:00 AM - 7:00 PM</p>
+        </div>
+        <div class="info-card">
+          <h3>Saturday</h3>
+          <p>9:00 AM - 4:00 PM</p>
+        </div>
+        <div class="info-card">
+          <h3>Sunday</h3>
+          <p>Closed</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Allied Medical &amp; Health Services, Inc. — All rights reserved.</p>
+      <p>730 S Central Ave, Ste 208 | Glendale, CA 91204</p>
+      <p>Office Hours: M/T/Th/F 9am–7pm, Saturday 9am–4pm</p>
+      <p style="flex-basis:100%;display:flex;flex-wrap:wrap;gap:1.25rem;margin:0;">
+        <a href="catalog_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Catalog</a>
+        <a href="spfs_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Performance Fact Sheet</a>
+        <a href="arep.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">Annual Report</a>
+        <a href="login.html" style="margin-left:auto;font-size:0.8rem;opacity:0.5;text-decoration:underline;">Admin Login</a>
+      </p>
+    </footer>
+  </main>
+  <script>
+    ['catalog_comb.pdf','spfs_comb.pdf','arep.pdf'].forEach(function(f){
+      fetch(f,{method:'HEAD'}).then(function(r){if(!r.ok)hideDoc(f);}).catch(function(){hideDoc(f);});
+    });
+    function hideDoc(f){var a=document.querySelector('a[href="'+f+'"]');if(a)a.style.display='none';}
+  </script>
+</body>
+</html>
+</html>

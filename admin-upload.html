@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Upload | AMHS Inc</title>
+  <style>
+    :root {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #f5f7fb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: #0f172a;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 32px rgba(15,23,42,0.1);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 520px;
+    }
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      border: 1px solid rgba(15,23,42,0.14);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.08);
+      flex-shrink: 0;
+    }
+    .logo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-name { font-size: 1rem; font-weight: 700; color: #0f172a; line-height: 1.2; }
+    .logo-sub { font-weight: 400; font-size: 0.8rem; color: #475569; }
+    .logout-btn {
+      background: none;
+      border: 1.5px solid rgba(15,23,42,0.15);
+      border-radius: 8px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.15s, color 0.15s;
+      width: auto;
+    }
+    .logout-btn:hover { border-color: #0f62fe; color: #0f62fe; }
+    h1 { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 1.5rem; }
+    .doc-table { width: 100%; border-collapse: collapse; margin-bottom: 1.75rem; font-size: 0.875rem; }
+    .doc-table th {
+      text-align: left;
+      padding: 0.4rem 0.5rem;
+      border-bottom: 2px solid #f0f0f0;
+      color: #475569;
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .doc-table td {
+      padding: 0.5rem 0.5rem;
+      border-bottom: 1px solid #f5f5f5;
+      color: #0f172a;
+    }
+    .doc-table td:last-child { color: #475569; font-size: 0.82rem; }
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #475569;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid rgba(15,23,42,0.15);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: #0f172a;
+      background: #f8fafc;
+      margin-bottom: 1.25rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    select:focus { outline: none; border-color: #0f62fe; }
+    .file-drop {
+      border: 2px dashed rgba(15,23,42,0.18);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 0.4rem;
+      background: #f8fafc;
+    }
+    .file-drop:hover { border-color: #0f62fe; background: #f0f6ff; }
+    .file-drop.has-file { border-color: #16a34a; background: #f0faf4; border-style: solid; }
+    .file-drop input[type="file"] { position: absolute; opacity: 0; width: 0; height: 0; }
+    .file-drop-text { font-size: 0.9rem; color: #475569; }
+    .file-drop-text span { color: #0f62fe; font-weight: 600; text-decoration: underline; }
+    .file-name { font-size: 0.82rem; color: #16a34a; margin: 0.35rem 0 1rem; min-height: 1.2em; font-weight: 600; }
+    .hint { font-size: 0.78rem; color: #94a3b8; margin-bottom: 1.25rem; }
+    button.primary {
+      width: 100%;
+      padding: 0.75rem;
+      background: #0f62fe;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    button.primary:hover:not(:disabled) { background: #0050e6; }
+    button.primary:disabled { opacity: 0.65; cursor: default; }
+    .status {
+      margin-top: 1rem;
+      padding: 0.7rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      display: none;
+      border: 1px solid transparent;
+    }
+    .status.success { background: #f0faf4; color: #15803d; border-color: #bbf7d0; }
+    .status.error { background: #fde8e8; color: #9b1c1c; border-color: #f5c0c0; }
+    hr { border: none; border-top: 1px solid #f0f0f0; margin: 1.5rem 0; }
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: #475569;
+      text-decoration: none;
+    }
+    .back:hover { color: #0f62fe; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="page-header">
+      <div class="logo-wrap">
+        <div class="logo-box">
+          <img src="amhs-logo.png" alt="AMHS Inc logo">
+        </div>
+        <div>
+          <div class="logo-name">AMHS Inc</div>
+          <div class="logo-sub">Document Management</div>
+        </div>
+      </div>
+      <button class="logout-btn" onclick="logout()">Sign Out</button>
+    </div>
+
+    <h1>Upload Document</h1>
+
+    <table class="doc-table">
+      <thead><tr><th>Document</th><th>Filename</th></tr></thead>
+      <tbody>
+        <tr><td>School Catalog</td><td>catalog_comb.pdf</td></tr>
+        <tr><td>School Performance Fact Sheet</td><td>spfs_comb.pdf</td></tr>
+        <tr><td>Annual Report</td><td>arep.pdf</td></tr>
+        <tr><td>CEU Schedule</td><td>ceu_schedule.pdf</td></tr>
+      </tbody>
+    </table>
+
+    <label for="docType">Replace Document</label>
+    <select id="docType">
+      <option value="catalog">School Catalog</option>
+      <option value="spfs">School Performance Fact Sheet</option>
+      <option value="annual">Annual Report</option>
+      <option value="ceu_schedule">CEU Schedule</option>
+    </select>
+
+    <label>PDF File</label>
+    <label for="pdf-input" class="file-drop" id="file-drop">
+      <div class="file-drop-text">Drop PDF here or <span>browse</span></div>
+    </label>
+    <input type="file" id="pdf-input" accept=".pdf,application/pdf" onchange="onFileChange(this)" style="position:absolute;opacity:0;width:0;height:0;">
+    <p class="file-name" id="file-name"></p>
+    <p class="hint">Only PDF files &middot; Maximum 20 MB</p>
+
+    <button class="primary" id="upload-btn" onclick="uploadPDF()">Upload Document</button>
+    <div id="status" class="status"></div>
+
+    <a href="amhsinc_modern_index.html" class="back">← Back to website</a>
+  </div>
+
+  <script>
+    let adminPassword = sessionStorage.getItem('amhs_admin_pw');
+    if (!adminPassword) window.location.replace('login.html');
+
+    function onFileChange(input) {
+      const drop = document.getElementById('file-drop');
+      const nameEl = document.getElementById('file-name');
+      if (input.files && input.files[0]) {
+        nameEl.textContent = input.files[0].name;
+        drop.classList.add('has-file');
+      } else {
+        nameEl.textContent = '';
+        drop.classList.remove('has-file');
+      }
+    }
+
+    function showStatus(message, type) {
+      const el = document.getElementById('status');
+      el.textContent = message;
+      el.className = 'status ' + type;
+      el.style.display = 'block';
+    }
+
+    async function uploadPDF() {
+      const file = document.getElementById('pdf-input').files[0];
+      const docType = document.getElementById('docType').value;
+      const btn = document.getElementById('upload-btn');
+
+      if (!file) { showStatus('Please select a PDF file.', 'error'); return; }
+      if (!file.name.toLowerCase().endsWith('.pdf')) { showStatus('Only PDF files are allowed.', 'error'); return; }
+
+      const formData = new FormData();
+      formData.append('docType', docType);
+      formData.append('pdf', file);
+
+      btn.disabled = true;
+      btn.textContent = 'Uploading…';
+      document.getElementById('status').style.display = 'none';
+
+      try {
+        const res = await fetch('/admin/upload', {
+          method: 'POST',
+          headers: { 'x-admin-password': adminPassword },
+          body: formData
+        });
+        const data = await res.json();
+        if (res.ok) {
+          showStatus('✓ ' + data.message, 'success');
+          document.getElementById('pdf-input').value = '';
+          document.getElementById('file-name').textContent = '';
+          document.getElementById('file-drop').classList.remove('has-file');
+        } else if (res.status === 401) {
+          sessionStorage.removeItem('amhs_admin_pw');
+          window.location.replace('login.html');
+        } else {
+          showStatus('Error: ' + data.error, 'error');
+        }
+      } catch {
+        showStatus('Upload failed. Make sure the server is running.', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Upload Document';
+      }
+    }
+
+    function logout() {
+      sessionStorage.removeItem('amhs_admin_pw');
+      window.location.replace('login.html');
+    }
+  </script>
+</body>
+</html>

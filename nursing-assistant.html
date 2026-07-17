@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nursing Assistant Program - Allied Medical & Health Services, Inc.</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --surface-alt: #e2e8f0;
+      --surface-strong: #1f2937;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0f62fe;
+      --primary-soft: #dbeafe;
+      --accent: #0f62fe;
+      --border: rgba(15, 23, 42, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f5f7fb;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .page {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .brand {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.14);
+      box-shadow: 0 16px 32px rgba(15,23,42,0.1);
+    }
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .brand-text {
+      display: grid;
+      gap: 0.08rem;
+    }
+    .brand-text p:first-child {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .brand-text p:last-child {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--text); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+      min-width: 210px;
+      padding: 0.5rem 0.4rem 0.4rem;
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
+    .nav-dropdown-menu a {
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { background: #f5f7fb; text-decoration: none; color: var(--text); }
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .hero {
+      display: grid;
+      gap: 2rem;
+      padding: 2.5rem;
+      border-radius: 32px;
+      background: url('Nursing-students-training-simulation-lab.jpg') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.85) 100%);
+    }
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      z-index: 1;
+      color: #f8fafc;
+      display: grid;
+      gap: 1.2rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.12);
+      color: #dbeafe;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4vw, 4.25rem);
+      line-height: 0.95;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.84);
+      font-size: 1.05rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 1rem 1.7rem;
+      background: #ffffff;
+      color: var(--surface-strong);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .content-section {
+      margin: 3rem 0;
+    }
+    .content-section h2 {
+      font-size: 2rem;
+      margin: 0 0 1.5rem;
+      color: var(--surface-strong);
+    }
+    .content-section h3 {
+      font-size: 1.3rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--surface-strong);
+    }
+    .content-section p {
+      margin: 1rem 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .content-section ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .content-section li {
+      margin: 0.5rem 0;
+      line-height: 1.8;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.05);
+    }
+    .info-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      color: var(--surface-strong);
+    }
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .info-card ul {
+      margin: 1rem 0 0;
+      padding-left: 1.5rem;
+    }
+    .info-card li {
+      margin: 0.5rem 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .schedule-item {
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 1.5rem;
+      border-radius: 20px;
+    }
+    .schedule-item h4 {
+      margin: 0 0 1rem;
+      font-size: 1.1rem;
+      color: var(--surface-strong);
+    }
+    .schedule-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+    .contact-block {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-radius: 28px;
+      background: #172c46;
+      color: #fff;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .contact-block h2 { margin: 0; font-size: 1.5rem; }
+    .contact-block p { margin: 0; color: rgba(255,255,255,0.82); }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      background: #ffffff;
+      color: #172c46;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+    .contact-button:hover { transform: translateY(-2px); }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(15,23,42,0.08);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    .highlight {
+      background: var(--primary-soft);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    @media (max-width: 980px) {
+      .hero { padding: 2rem; }
+      .hero h1 { font-size: 3rem; }
+    }
+    @media (max-width: 760px) {
+      .page { padding: 1rem 0 3rem; }
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; }
+      .hero { border-radius: 24px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .schedule-grid { grid-template-columns: 1fr; }
+      .contact-actions { flex-direction: column; }
+      .contact-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="amhs-logo.png" alt="AMHS logo" />
+        </div>
+        <div class="brand-text">
+          <p>Allied Medical &amp; Health Services, Inc.</p>
+          <p>Glendale, California | Healthcare career training</p>
+        </div>
+      </div>
+      <nav>
+        <a href="amhsinc_modern_index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="amhsinc_modern_index.html#programs">Programs Offered ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="vocational-nursing.html">Vocational Nursing</a>
+            <a href="phlebotomy-technician.html">Phlebotomy Technician I</a>
+            <a href="nursing-assistant.html">Nursing Assistant</a>
+            <a href="ceu-for-cna.html">CEU for CNA</a>
+          </div>
+        </div>
+        <a href="schedule.html">Schedule</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <a href="amhsinc_modern_index.html" class="back-link">← Back to Home</a>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Nursing Assistant Program</span>
+        <h1>Start Your Healthcare Career</h1>
+        <p>Learn essential bedside care and patient support skills. Complete 152 hours of comprehensive training to become a certified Nursing Assistant.</p>
+        <div class="hero-actions">
+          <a class="button" href="tel:8186377871">Call to Enroll</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Course Objective</h2>
+      <p>This course was designed to teach students the basic knowledge and skills necessary to perform various duties assisting staff nurses in the care of patients in long-term facilities or acute care hospitals.</p>
+      <p>Successful completion of the Nursing Assistant course may be the initial step leading to a "ladder type" Nursing career program towards <span class="highlight">LVN or RN</span>, and may also prepare students for other related Allied Health Technological courses such as Laboratory, Radiology, Physiotherapy, Dietary, or Social Work.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Program Overview</h2>
+      <p>Upon completion of <span class="highlight">152 hours</span> of theory and clinical training, students will be evaluated by the school on their competency to be eligible for graduation and to qualify for the licensing examination.</p>
+      <p>Licensure is awarded by the State after passing the Competency Examination, which consists of skill and theoretical (written) proficiency evaluation by Department of Health Services licensing agencies (American Red Cross or NATAP).</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Training Schedule</h2>
+      <div class="schedule-grid">
+        <div class="schedule-item">
+          <h4>Program Duration</h4>
+          <p>3 Months (19 days)<br/>152 Total Hours</p>
+        </div>
+        <div class="schedule-item">
+          <h4>Saturday</h4>
+          <p>7:00am - 3:00pm</p>
+        </div>
+        <div class="schedule-item">
+          <h4>Sunday</h4>
+          <p>9:00am - 4:00pm</p>
+        </div>
+      </div>
+      <p style="color:var(--muted); margin-top: 1rem;"><em>Weekend classes provide flexible training for students balancing work and education.</em></p>
+    </section>
+
+    <section class="content-section">
+      <h2>Admission Requirements</h2>
+      <ul>
+        <li>16 years or older</li>
+        <li>High School Grade Level or GED</li>
+        <li>Livescan clearance application</li>
+        <li>CPR "A" card or higher</li>
+        <li>Medical Clearance (Physical Exam &amp; TB Test)</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>What You'll Learn</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Bedside Care</h3>
+          <p>Master essential patient care skills including hygiene, comfort measures, and daily living assistance for hospitalized and long-term care patients.</p>
+        </div>
+        <div class="info-card">
+          <h3>Patient Support</h3>
+          <p>Develop compassionate communication skills and learn to provide emotional and physical support to patients during their healthcare journey.</p>
+        </div>
+        <div class="info-card">
+          <h3>Medical Procedures</h3>
+          <p>Learn basic medical procedures, vital signs monitoring, and proper documentation of patient care activities.</p>
+        </div>
+        <div class="info-card">
+          <h3>Safety &amp; Infection Control</h3>
+          <p>Understand healthcare safety protocols, infection prevention measures, and proper equipment handling techniques.</p>
+        </div>
+        <div class="info-card">
+          <h3>Team Collaboration</h3>
+          <p>Learn to work effectively with nurses, physicians, and other healthcare professionals in various care settings.</p>
+        </div>
+        <div class="info-card">
+          <h3>Professional Standards</h3>
+          <p>Develop professional judgment, ethical decision-making, and adherence to healthcare standards and regulations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Job Opportunities</h2>
+      <p>As a certified Nursing Assistant, you will be eligible to work in the following healthcare settings:</p>
+      <ul>
+        <li>Acute Care Hospitals</li>
+        <li>Transitional Unit Facilities</li>
+        <li>Skilled Nursing Homes</li>
+        <li>Nursing Registries</li>
+        <li>In-Home Care Services</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>Career Advancement</h2>
+      <p>The Nursing Assistant certification is an excellent foundation for further healthcare education. Many students use this program as a stepping stone to pursue advanced certifications and degree programs, including:</p>
+      <ul>
+        <li>Licensed Vocational Nurse (LVN) Programs</li>
+        <li>Registered Nurse (RN) Programs</li>
+        <li>Other Allied Health Certifications</li>
+      </ul>
+    </section>
+
+    <section class="contact-block">
+      <h2>Ready to Start Your Nursing Assistant Career?</h2>
+      <p>Our admissions team is here to answer your questions and help you enroll in the program.</p>
+      <div class="contact-actions">
+        <a class="contact-button" href="tel:8186377871">Call: (818) 637-7871</a>
+        <a class="contact-button" href="mailto:info@amhsinc.com">Email: info@amhsinc.com</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Allied Medical &amp; Health Services, Inc. — All rights reserved.</p>
+      <p>730 S Central Ave, Ste 208 | Glendale, CA 91204</p>
+      <p>Office Hours: M/T/Th/F 9am–7pm, Saturday 9am–4pm</p>
+      <p style="flex-basis:100%;display:flex;flex-wrap:wrap;gap:1.25rem;margin:0;">
+        <a href="catalog_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Catalog</a>
+        <a href="spfs_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Performance Fact Sheet</a>
+        <a href="arep.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">Annual Report</a>
+        <a href="login.html" style="margin-left:auto;font-size:0.8rem;opacity:0.5;text-decoration:underline;">Admin Login</a>
+      </p>
+    </footer>
+  </main>
+  <script>
+    ['catalog_comb.pdf','spfs_comb.pdf','arep.pdf'].forEach(function(f){
+      fetch(f,{method:'HEAD'}).then(function(r){if(!r.ok)hideDoc(f);}).catch(function(){hideDoc(f);});
+    });
+    function hideDoc(f){var a=document.querySelector('a[href="'+f+'"]');if(a)a.style.display='none';}
+  </script>
+</body>
+</html>

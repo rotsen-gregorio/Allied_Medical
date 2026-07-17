@@ -1,0 +1,224 @@
+- generic [ref=f3e3]:
+  - navigation [ref=f3e6]:
+    - generic [ref=f3e9]:
+      - link [ref=f3e10] [cursor=pointer]:
+        - /url: https://www.yext.com
+      - navigation [ref=f3e14]:
+        - tablist [ref=f3e15]:
+          - button "Platform" [ref=f3e16] [cursor=pointer]
+          - button "Solutions" [ref=f3e17] [cursor=pointer]
+          - button "Resources" [ref=f3e18] [cursor=pointer]
+          - button "Support" [ref=f3e19] [cursor=pointer]
+          - button "Company" [ref=f3e20] [cursor=pointer]
+      - generic [ref=f3e22]:
+        - generic [ref=f3e23]:
+          - link "Sign in" [ref=f3e24] [cursor=pointer]:
+            - /url: https://www.yext.com/users/login
+          - link "Contact Us" [ref=f3e25] [cursor=pointer]:
+            - /url: https://www.yext.com/contact/sales
+          - link "Support" [ref=f3e26] [cursor=pointer]:
+            - /url: https://help.yext.com/hc/en-us/requests/new?&referrerPageUrl=https://help.yext.com/hc/en-us
+          - button "English" [ref=f3e28] [cursor=pointer]
+        - link "Get Started" [ref=f3e29] [cursor=pointer]:
+          - /url: https://www.yext.com/demo
+  - main [ref=f3e30]:
+    - generic [ref=f3e31]:
+      - generic [ref=f3e34]:
+        - heading "Whoops! Looks like this page is not found" [level=1] [ref=f3e35]
+        - paragraph [ref=f3e38]:
+          - text: Resume your journey to a stronger digital presence from our
+          - link "homepage" [ref=f3e39] [cursor=pointer]:
+            - /url: /
+          - text: or
+          - link "blog" [ref=f3e40] [cursor=pointer]:
+            - /url: /blog
+          - text: .
+        - img "loading icon" [ref=f3e43]
+      - generic [ref=f3e48]:
+        - generic [ref=f3e51]:
+          - heading "Documentation" [level=6] [ref=f3e52]
+          - paragraph
+          - paragraph [ref=f3e54]: Resources for the Yext Platform and the Hitchhikers Platform — Point & Click, SDK, APIs, and more.
+          - link "Learn more" [ref=f3e56] [cursor=pointer]:
+            - /url: https://hitchhikers.yext.com/docs
+        - generic [ref=f3e59]:
+          - heading "Content Library" [level=6] [ref=f3e60]
+          - paragraph
+          - paragraph [ref=f3e62]: Read our latest posts, download whitepapers, and watch our newest videos.
+          - link "Learn more" [ref=f3e64] [cursor=pointer]:
+            - /url: https://www.yext.com/resources
+        - generic [ref=f3e67]:
+          - heading "Solutions" [level=6] [ref=f3e68]
+          - paragraph
+          - paragraph [ref=f3e70]: The Yext Answers Platform offers an AI Search solution for every business need so you can deliver answers, not links
+          - link "Learn more" [ref=f3e72] [cursor=pointer]:
+            - /url: https://www.yext.com/solutions
+        - generic [ref=f3e75]:
+          - heading "About Yext" [level=6] [ref=f3e76]
+          - paragraph
+          - paragraph [ref=f3e78]: Yext is on a mission to transform the enterprise with AI search. Learn more here.
+          - link "Learn more" [ref=f3e80] [cursor=pointer]:
+            - /url: https://www.yext.com/about
+  - contentinfo [ref=f3e82]:
+    - generic [ref=f3e83]:
+      - generic [ref=f3e84]:
+        - generic [ref=f3e85]:
+          - link "Intelligence. Verified data. <br>Everywhere that matters. Intelligence. Verified data. Everywhere that matters." [ref=f3e86] [cursor=pointer]:
+            - /url: https://www.yext.com
+            - img "Intelligence. Verified data. <br>Everywhere that matters."
+            - generic:
+              - generic:
+                - paragraph: Intelligence. Verified data. Everywhere that matters.
+          - link "Get a demo" [ref=f3e87] [cursor=pointer]:
+            - /url: https://www.yext.com/demo
+        - generic [ref=f3e89]:
+          - generic [ref=f3e92]:
+            - paragraph [ref=f3e93]: Company
+            - paragraph [ref=f3e94]:
+              - link "About" [ref=f3e95] [cursor=pointer]:
+                - /url: https://www.yext.com/about
+            - paragraph [ref=f3e96]:
+              - link "Careers" [ref=f3e97] [cursor=pointer]:
+                - /url: https://www.yext.com/careers
+            - paragraph [ref=f3e98]:
+              - link "Press" [ref=f3e99] [cursor=pointer]:
+                - /url: https://www.yext.com/about/news-media
+            - paragraph [ref=f3e100]:
+              - link "Partners" [ref=f3e101] [cursor=pointer]:
+                - /url: https://www.yext.com/partners
+            - paragraph [ref=f3e102]:
+              - link "Investors" [ref=f3e103] [cursor=pointer]:
+                - /url: https://investors.yext.com/
+            - paragraph [ref=f3e104]:
+              - link "Office Locations" [ref=f3e105] [cursor=pointer]:
+                - /url: https://www.yext.com/locations
+            - paragraph [ref=f3e106]:
+              - link "Yext Directory" [ref=f3e107] [cursor=pointer]:
+                - /url: https://location.com
+            - paragraph [ref=f3e108]:
+              - link "Modern Slavery Act Statement" [ref=f3e109] [cursor=pointer]:
+                - /url: https://www.yext.com/terms/uk-modern-slavery-act
+          - generic [ref=f3e112]:
+            - paragraph [ref=f3e113]: Platform
+            - paragraph [ref=f3e114]:
+              - link "Scout" [ref=f3e115] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/scout
+            - paragraph [ref=f3e116]:
+              - link "Listings" [ref=f3e117] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/listings
+            - paragraph [ref=f3e118]:
+              - link "Knowledge Graph" [ref=f3e119] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/content
+            - paragraph [ref=f3e120]:
+              - link "Reviews" [ref=f3e121] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/reviews
+            - paragraph [ref=f3e122]:
+              - link "Social" [ref=f3e123] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/social
+            - paragraph [ref=f3e124]:
+              - link "Pages" [ref=f3e125] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/pages
+            - paragraph [ref=f3e126]:
+              - link "Search" [ref=f3e127] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/search
+            - paragraph [ref=f3e128]:
+              - link "Hearsay Social" [ref=f3e129] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/hearsay-social
+            - paragraph [ref=f3e130]:
+              - link "Hearsay Relate" [ref=f3e131] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/relate
+            - paragraph [ref=f3e132]:
+              - link "Yext AI" [ref=f3e133] [cursor=pointer]:
+                - /url: https://www.yext.com/platform/yext-ai
+            - paragraph [ref=f3e134]:
+              - link "Scout by Yext for iOS" [ref=f3e135] [cursor=pointer]:
+                - /url: https://apps.apple.com/us/app/scout-by-yext/id6747995596
+            - paragraph [ref=f3e136]:
+              - link "Scout by Yext for Android" [ref=f3e137] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=com.yext.scout
+          - generic [ref=f3e140]:
+            - paragraph [ref=f3e141]: Industry
+            - paragraph [ref=f3e142]:
+              - link "Financial Services" [ref=f3e143] [cursor=pointer]:
+                - /url: https://www.yext.com/industries/financial-services
+            - paragraph [ref=f3e144]:
+              - link "Healthcare" [ref=f3e145] [cursor=pointer]:
+                - /url: https://www.yext.com/industries/healthcare
+            - paragraph [ref=f3e146]:
+              - link "Retail" [ref=f3e147] [cursor=pointer]:
+                - /url: https://www.yext.com/industries/retail
+            - paragraph [ref=f3e148]:
+              - link "Food" [ref=f3e149] [cursor=pointer]:
+                - /url: https://www.yext.com/industries/food-services
+            - paragraph [ref=f3e150]:
+              - link "Hospitality" [ref=f3e151] [cursor=pointer]:
+                - /url: https://www.yext.com/industries/hospitality
+          - generic [ref=f3e153]:
+            - generic [ref=f3e154]:
+              - paragraph [ref=f3e155]: Resources
+              - paragraph [ref=f3e156]:
+                - link "Blog" [ref=f3e157] [cursor=pointer]:
+                  - /url: https://www.yext.com/blog
+              - paragraph [ref=f3e158]:
+                - link "Publications" [ref=f3e159] [cursor=pointer]:
+                  - /url: https://www.yext.com/resources/publications
+              - paragraph [ref=f3e160]:
+                - link "Customer Stories" [ref=f3e161] [cursor=pointer]:
+                  - /url: https://www.yext.com/customers
+              - paragraph [ref=f3e162]:
+                - link "Events" [ref=f3e163] [cursor=pointer]:
+                  - /url: https://www.yext.com/resources/webinars
+              - paragraph [ref=f3e164]:
+                - link "Trust Center" [ref=f3e165] [cursor=pointer]:
+                  - /url: https://trustcenter.yext.com/
+              - paragraph [ref=f3e166]:
+                - link "Yext Research" [ref=f3e167] [cursor=pointer]:
+                  - /url: https://www.yext.com/research
+            - generic [ref=f3e168]:
+              - paragraph [ref=f3e169]: Support
+              - paragraph [ref=f3e170]:
+                - link "Help Center" [ref=f3e171] [cursor=pointer]:
+                  - /url: https://www.yext.com/help
+              - paragraph [ref=f3e172]:
+                - link "Training" [ref=f3e173] [cursor=pointer]:
+                  - /url: https://hitchhikers.yext.com/training/
+              - paragraph [ref=f3e174]:
+                - link "Guides" [ref=f3e175] [cursor=pointer]:
+                  - /url: https://hitchhikers.yext.com/guides
+              - paragraph [ref=f3e176]:
+                - link "Documentation" [ref=f3e177] [cursor=pointer]:
+                  - /url: https://hitchhikers.yext.com/docs
+      - generic [ref=f3e178]:
+        - button "English" [ref=f3e182] [cursor=pointer]
+        - generic [ref=f3e184]:
+          - list [ref=f3e185]:
+            - listitem [ref=f3e186]:
+              - link "Privacy Policy" [ref=f3e187] [cursor=pointer]:
+                - /url: https://www.yext.com/privacy-policy/
+              - text: "|"
+            - listitem [ref=f3e188]:
+              - link "Terms" [ref=f3e189] [cursor=pointer]:
+                - /url: https://www.yext.com/terms/
+              - text: "|"
+            - listitem [ref=f3e190]:
+              - link "AdChoices" [ref=f3e191] [cursor=pointer]:
+                - /url: https://www.yext.com/privacy-policy/#ad-choices
+              - text: "|"
+            - listitem [ref=f3e192]:
+              - link "Copyright" [ref=f3e193] [cursor=pointer]:
+                - /url: https://www.yext.com/terms/copyright-policy
+              - text: "|"
+            - listitem [ref=f3e194]:
+              - button "Settings" [ref=f3e195] [cursor=pointer]
+          - button "Do not sell or share my personal information" [ref=f3e196] [cursor=pointer]
+        - generic [ref=f3e197]:
+          - link [ref=f3e198] [cursor=pointer]:
+            - /url: https://yex.tt/38ZbOw7
+          - link [ref=f3e199] [cursor=pointer]:
+            - /url: https://yex.tt/2MBz4c5
+          - link [ref=f3e200] [cursor=pointer]:
+            - /url: https://yex.tt/358WI6a
+          - link [ref=f3e201] [cursor=pointer]:
+            - /url: https://yex.tt/3rOrZFb
+          - link [ref=f3e202] [cursor=pointer]:
+            - /url: https://yex.tt/391xUy0

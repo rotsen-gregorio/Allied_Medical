@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allied Medical & Health Services, Inc.</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --surface-alt: #e2e8f0;
+      --surface-strong: #1f2937;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0f62fe;
+      --primary-soft: #dbeafe;
+      --accent: #0f62fe;
+      --border: rgba(15, 23, 42, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f5f7fb;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .page {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .brand {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.14);
+      box-shadow: 0 16px 32px rgba(15,23,42,0.1);
+    }
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .brand-text {
+      display: grid;
+      gap: 0.08rem;
+    }
+    .brand-text p:first-child {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .brand-text p:last-child {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--text); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+      min-width: 210px;
+      padding: 0.5rem 0.4rem 0.4rem;
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
+    .nav-dropdown-menu a {
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { background: #f5f7fb; text-decoration: none; color: var(--text); }
+    .hero {
+      display: grid;
+      gap: 2rem;
+      padding: 2.5rem;
+      border-radius: 32px;
+      background: url('Health.jpg') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.85) 100%);
+    }
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      z-index: 1;
+      color: #f8fafc;
+      display: grid;
+      gap: 1.2rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.12);
+      color: #dbeafe;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4vw, 4.25rem);
+      line-height: 0.95;
+      max-width: 15ch;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.84);
+      font-size: 1.05rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .button,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    .button {
+      padding: 1rem 1.7rem;
+      background: #ffffff;
+      color: var(--surface-strong);
+      font-weight: 700;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .pill {
+      padding: 0.8rem 1.1rem;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .course-card {
+      padding: 1.4rem;
+      border-radius: 24px;
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: 0 24px 60px rgba(15,23,42,0.06);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .course-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+      color: var(--surface-strong);
+    }
+    .course-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      flex-grow: 1;
+    }
+    .course-card-image {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin: 1rem 0 0.9rem;
+      display: block;
+      background: #e2e8f0;
+    }
+    .info-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 1.5rem;
+      border-radius: 24px;
+    }
+    .info-card h3 { margin-top: 0; font-size: 1.05rem; }
+    .info-card p, .info-card li {
+      color: var(--muted);
+      margin: 0.8rem 0 0;
+      font-size: 0.96rem;
+    }
+    .info-card ul { padding-left: 1.15rem; margin: 0.8rem 0 0; }
+    .info-card li { margin-bottom: 0.7rem; }
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+    }
+    .schedule-card {
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 20px;
+      padding: 0.85rem;
+    }
+    .schedule-card strong {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-size: 0.98rem;
+      color: var(--surface-strong);
+    }
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.25rem;
+    }
+    .schedule-table th,
+    .schedule-table td {
+      padding: 0.65rem 0.65rem;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+    .schedule-table th {
+      color: var(--surface-strong);
+      font-weight: 700;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+    }
+    .schedule-table tr:last-child td {
+      border-bottom: none;
+    }
+    .contact-block {
+      margin-top: 2.5rem;
+      padding: 2rem;
+      border-radius: 28px;
+      background: #172c46;
+      color: #fff;
+      display: grid;
+      gap: 1rem;
+    }
+    .contact-block h2 { margin: 0; font-size: 1.5rem; }
+    .contact-block p { margin: 0; color: rgba(255,255,255,0.82); }
+    .contact-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .contact-details-item,
+    .address-card {
+      padding: 1.25rem 1.4rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .contact-details-item dt,
+    .address-card dt {
+      margin: 0;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.72);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .contact-details-item dd,
+    .address-card dd {
+      margin: 0.55rem 0 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .address-card {
+      display: grid;
+      gap: 1rem;
+      min-height: 220px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .address-card .map-box {
+      border-radius: 18px;
+      overflow: hidden;
+      height: 150px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0f172a;
+    }
+    .address-card .map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .address-card .map-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.16);
+      text-decoration: none;
+      font-size: 0.95rem;
+      justify-self: start;
+    }
+    .address-card .map-link:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .contact-card {
+      display: grid;
+      gap: 1rem;
+      padding: 1.8rem;
+      border-radius: 24px;
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+    }
+    .contact-card {
+      display: grid;
+      gap: 1rem;
+      padding: 1.4rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .contact-card-heading {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: #fff;
+      font-size: 0.98rem;
+      line-height: 1.4;
+    }
+    .contact-icon {
+      width: 2.15rem;
+      height: 2.15rem;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-card a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(15,23,42,0.08);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 980px) {
+      .hero { padding: 2rem; }
+      .hero h1 { font-size: 3rem; }
+    }
+    @media (max-width: 760px) {
+      .page { padding: 1rem 0 3rem; }
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; }
+      .hero { border-radius: 24px; }
+      .contact-details { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" id="home">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="amhs-logo.png" alt="AMHS logo" />
+        </div>
+        <div class="brand-text">
+          <p>Allied Medical &amp; Health Services, Inc.</p>
+          <p>Glendale, California | Healthcare career training</p>
+        </div>
+      </div>
+      <nav>
+        <a href="amhsinc_modern_index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="#programs">Programs Offered ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="vocational-nursing.html">Vocational Nursing</a>
+            <a href="phlebotomy-technician.html">Phlebotomy Technician I</a>
+            <a href="nursing-assistant.html">Nursing Assistant</a>
+            <a href="ceu-for-cna.html">CEU for CNA</a>
+          </div>
+        </div>
+        <a href="schedule.html">Schedule</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Approved by BPPE</span>
+        <h1>Find the right healthcare course and start your medical career.</h1>
+        <p>Allied Medical &amp; Health Services offers Vocational Nursing, Phlebotomy Technician I, Nursing Assistant, and CNA continuing education in Glendale, CA. Our campus supports weekend and weeknight classes for flexible career training.</p>
+        <div class="hero-actions">
+          <a class="button" href="tel:8186377871">Call to enroll</a>
+          <span class="pill">Weekend &amp; Weeknight classes</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" style="margin-top:2.5rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;">
+        <div>
+          <p style="margin:0;color:var(--primary);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;">Programs Offered</p>
+          <h2 style="margin:0.5rem 0 0;font-size:2rem;line-height:1.1;">Career-focused healthcare training in Glendale.</h2>
+        </div>
+        <a class="button" href="#contact" style="background:var(--primary);color:#fff;">Contact Admissions</a>
+      </div>
+
+      <div class="course-grid">
+        <a href="vocational-nursing.html" style="text-decoration:none;color:inherit;">
+          <article class="course-card" style="cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 32px 80px rgba(15,23,42,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 24px 60px rgba(15,23,42,0.06)';">
+            <img class="course-card-image" src="Student-grooming-training.jpg" alt="Vocational Nursing training" />
+            <h3>Vocational Nursing</h3>
+            <p>Comprehensive practical training for nursing fundamentals, clinical skills, and patient support. Ideal for students preparing for a vocational nursing career.</p>
+          </article>
+        </a>
+        <a href="phlebotomy-technician.html" style="text-decoration:none;color:inherit;">
+          <article class="course-card" style="cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 32px 80px rgba(15,23,42,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 24px 60px rgba(15,23,42,0.06)';">
+            <img class="course-card-image" src="Blood-taking-venepuncture.jpg" alt="Phlebotomy Technician training" />
+            <h3>Phlebotomy Technician I</h3>
+            <p>Hands-on phlebotomy preparation and laboratory skills for professionals working in diagnostic healthcare settings.</p>
+          </article>
+        </a>
+        <a href="nursing-assistant.html" style="text-decoration:none;color:inherit;">
+          <article class="course-card" style="cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 32px 80px rgba(15,23,42,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 24px 60px rgba(15,23,42,0.06)';">
+            <img class="course-card-image" src="Nursing-students-training-simulation-lab.jpg" alt="Nursing Assistant training" />
+            <h3>Nursing Assistant</h3>
+            <p>Essential nursing assistant training focused on bedside care, patient support, and basic medical procedures.</p>
+          </article>
+        </a>
+        <a href="ceu-for-cna.html" style="text-decoration:none;color:inherit;">
+          <article class="course-card" style="cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 32px 80px rgba(15,23,42,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 24px 60px rgba(15,23,42,0.06)';">
+            <img class="course-card-image" src="Students-studying-at-ANMEC.jpg" alt="CEU for CNA training" />
+            <h3>CEU for CNA</h3>
+            <p>Continuing education available Monday, Thursday, and Friday to help certified nursing assistants maintain their credentials.</p>
+          </article>
+        </a>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card" id="schedule">
+        <h3>Schedule & Enrollment</h3>
+        <p>Call today to confirm the current class schedule and reserve your spot. We offer flexible weekend and weeknight options for students balancing work and training.</p>
+        <div class="schedule-grid">
+          <div class="schedule-card">
+            <strong>Class days</strong>
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Days</th>
+                  <th>Hours</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Monday, Tuesday, Thursday, Friday</td>
+                  <td>9:00am to 7:00pm</td>
+                </tr>
+                <tr>
+                  <td>Saturday</td>
+                  <td>9:00am to 4:00pm</td>
+                </tr>
+                <tr>
+                  <td>Wednesday and Sunday</td>
+                  <td>Closed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="schedule-card">
+            <strong>Holiday closures</strong>
+            <ul>
+              <li>01/01/2026 — New Year’s Day</li>
+              <li>05/25/2026 — Memorial Day</li>
+              <li>07/04/2026 — Independence Day</li>
+              <li>09/07/2026 — Labor Day</li>
+              <li>11/26/2026 — Thanksgiving</li>
+              <li>12/25/2026 — Christmas Day</li>
+            </ul>
+          </div>
+        </div>
+        <div style="margin-top:1rem;">
+          <strong>Enrollment</strong>
+          <p>To enroll, call <a href="tel:8186377871">(818) 637-7871</a> or email <a href="mailto:info@amhsinc.com">info@amhsinc.com</a>. Our admissions team will walk you through availability, registration requirements, and class start dates.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact-block" id="contact">
+      <h2>Ready to start your healthcare training?</h2>
+      <p>Reach out now for enrollment details, program guidance, and class schedules. Our team is available to help you find the course that fits your career goals.</p>
+      <div class="contact-details">
+        <div class="contact-card">
+          <div class="contact-card-heading">Contact</div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>730 S Central Ave Ste 208, Glendale, CA 91204</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:8186377871">(818) 637-7871</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📠</span>
+            <span>Fax: (818) 637-2104</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <a href="mailto:info@amhsinc.com">info@amhsinc.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">f</span>
+            <a href="https://www.facebook.com/AMHSinc" target="_blank" rel="noopener">Facebook / AMHSinc</a>
+          </div>
+        </div>
+        <div class="address-card">
+          <div>
+            <dt>Address</dt>
+            <dd>730 S Central Ave Ste 208<br>Glendale, CA 91204</dd>
+          </div>
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps?q=730+S+Central+Ave+Ste+208+Glendale+CA+91204&output=embed"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Allied Medical &amp; Health Services, Inc. — All rights reserved.</p>
+      <p>730 S Central Ave, Ste 208 | Glendale, CA 91204</p>
+      <p>Office Hours: M/T/Th/F 9am–7pm, Saturday 9am–4pm</p>
+      <p style="flex-basis:100%;display:flex;flex-wrap:wrap;gap:1.25rem;margin:0;">
+        <a href="catalog_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Catalog</a>
+        <a href="spfs_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Performance Fact Sheet</a>
+        <a href="arep.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">Annual Report</a>
+        <a href="login.html" style="margin-left:auto;font-size:0.8rem;opacity:0.5;text-decoration:underline;">Admin Login</a>
+      </p>
+    </footer>
+  </main>
+  <script>
+    ['catalog_comb.pdf','spfs_comb.pdf','arep.pdf'].forEach(function(f){
+      fetch(f,{method:'HEAD'}).then(function(r){if(!r.ok)hideDoc(f);}).catch(function(){hideDoc(f);});
+    });
+    function hideDoc(f){var a=document.querySelector('a[href="'+f+'"]');if(a)a.style.display='none';}
+  </script>
+</body>
+</html>

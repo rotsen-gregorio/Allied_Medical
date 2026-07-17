@@ -1,0 +1,129 @@
+- main [ref=f124e2]:
+  - generic [ref=f124e3]:
+    - generic [ref=f124e4]:
+      - img "AMHS logo" [ref=f124e6]
+      - generic [ref=f124e7]:
+        - paragraph [ref=f124e8]: Allied Medical & Health Services, Inc.
+        - paragraph [ref=f124e9]: Glendale, California | Healthcare career training
+    - navigation [ref=f124e10]:
+      - link "Home" [ref=f124e11] [cursor=pointer]:
+        - /url: amhsinc_modern_index.html
+      - link "Programs Offered" [ref=f124e12] [cursor=pointer]:
+        - /url: "#programs"
+      - link "About Us" [ref=f124e13] [cursor=pointer]:
+        - /url: about-us.html
+      - link "Contact Us" [ref=f124e14] [cursor=pointer]:
+        - /url: "#contact"
+  - generic [ref=f124e16]:
+    - generic [ref=f124e17]: Approved by BPPE
+    - heading "Find the right healthcare course and start your medical career." [level=1] [ref=f124e18]
+    - paragraph [ref=f124e19]: Allied Medical & Health Services offers Vocational Nursing, Phlebotomy Technician I, Nursing Assistant, and CNA continuing education in Glendale, CA. Our campus supports weekend and weeknight classes for flexible career training.
+    - generic [ref=f124e20]:
+      - link "Call to enroll" [ref=f124e21] [cursor=pointer]:
+        - /url: tel:8186377871
+      - generic [ref=f124e22]: Weekend & Weeknight classes
+  - generic [ref=f124e23]:
+    - generic [ref=f124e24]:
+      - generic [ref=f124e25]:
+        - paragraph [ref=f124e26]: Programs Offered
+        - heading "Career-focused healthcare training in Glendale." [level=2] [ref=f124e27]
+      - link "Contact Admissions" [ref=f124e28] [cursor=pointer]:
+        - /url: "#contact"
+    - generic [ref=f124e29]:
+      - link [ref=f124e30] [cursor=pointer]:
+        - /url: vocational-nursing.html
+        - article [ref=f124e31]:
+          - img "Vocational Nursing training" [ref=f124e32]
+          - heading "Vocational Nursing" [level=3] [ref=f124e33]
+          - paragraph [ref=f124e34]: Comprehensive practical training for nursing fundamentals, clinical skills, and patient support. Ideal for students preparing for a vocational nursing career.
+      - link [ref=f124e35] [cursor=pointer]:
+        - /url: phlebotomy-technician.html
+        - article [ref=f124e36]:
+          - img "Phlebotomy Technician training" [ref=f124e37]
+          - heading "Phlebotomy Technician I" [level=3] [ref=f124e38]
+          - paragraph [ref=f124e39]: Hands-on phlebotomy preparation and laboratory skills for professionals working in diagnostic healthcare settings.
+      - link [ref=f124e40] [cursor=pointer]:
+        - /url: nursing-assistant.html
+        - article [ref=f124e41]:
+          - img "Nursing Assistant training" [ref=f124e42]
+          - heading "Nursing Assistant" [level=3] [ref=f124e43]
+          - paragraph [ref=f124e44]: Essential nursing assistant training focused on bedside care, patient support, and basic medical procedures.
+      - link [ref=f124e45] [cursor=pointer]:
+        - /url: ceu-for-cna.html
+        - article [ref=f124e46]:
+          - img "CEU for CNA training" [ref=f124e47]
+          - heading "CEU for CNA" [level=3] [ref=f124e48]
+          - paragraph [ref=f124e49]: Continuing education available Monday, Thursday, and Friday to help certified nursing assistants maintain their credentials.
+  - article [ref=f124e51]:
+    - heading "Schedule & Enrollment" [level=3] [ref=f124e52]
+    - paragraph [ref=f124e53]: Call today to confirm the current class schedule and reserve your spot. We offer flexible weekend and weeknight options for students balancing work and training.
+    - generic [ref=f124e54]:
+      - generic [ref=f124e55]:
+        - strong [ref=f124e56]: Class days
+        - table [ref=f124e57]:
+          - rowgroup [ref=f124e58]:
+            - row [ref=f124e59]:
+              - columnheader "Days" [ref=f124e60]
+              - columnheader "Hours" [ref=f124e61]
+          - rowgroup [ref=f124e62]:
+            - row [ref=f124e63]:
+              - cell "Monday, Tuesday, Thursday, Friday" [ref=f124e64]
+              - cell "9:00am to 7:00pm" [ref=f124e65]
+            - row [ref=f124e66]:
+              - cell "Saturday" [ref=f124e67]
+              - cell "9:00am to 4:00pm" [ref=f124e68]
+            - row [ref=f124e69]:
+              - cell "Wednesday and Sunday" [ref=f124e70]
+              - cell "Closed" [ref=f124e71]
+      - generic [ref=f124e72]:
+        - strong [ref=f124e73]: Holiday closures
+        - list [ref=f124e74]:
+          - listitem [ref=f124e75]: 01/01/2026 — New Year’s Day
+          - listitem [ref=f124e76]: 05/25/2026 — Memorial Day
+          - listitem [ref=f124e77]: 07/04/2026 — Independence Day
+          - listitem [ref=f124e78]: 09/07/2026 — Labor Day
+          - listitem [ref=f124e79]: 11/26/2026 — Thanksgiving
+          - listitem [ref=f124e80]: 12/25/2026 — Christmas Day
+    - generic [ref=f124e81]:
+      - strong [ref=f124e82]: Enrollment
+      - paragraph [ref=f124e83]:
+        - text: To enroll, call
+        - link "(818) 637-7871" [ref=f124e84] [cursor=pointer]:
+          - /url: tel:8186377871
+        - text: or email
+        - link "info@amhsinc.com" [ref=f124e85] [cursor=pointer]:
+          - /url: mailto:info@amhsinc.com
+        - text: . Our admissions team will walk you through availability, registration requirements, and class start dates.
+  - generic [ref=f124e86]:
+    - heading "Ready to start your healthcare training?" [level=2] [ref=f124e87]
+    - paragraph [ref=f124e88]: Reach out now for enrollment details, program guidance, and class schedules. Our team is available to help you find the course that fits your career goals.
+    - generic [ref=f124e89]:
+      - generic [ref=f124e90]:
+        - generic [ref=f124e91]: Contact
+        - generic [ref=f124e92]:
+          - generic [ref=f124e93]: 📍
+          - generic [ref=f124e94]: 730 S Central Ave Ste 208, Glendale, CA 91204
+        - generic [ref=f124e95]:
+          - generic [ref=f124e96]: 📞
+          - link "(818) 637-7871" [ref=f124e97] [cursor=pointer]:
+            - /url: tel:8186377871
+        - generic [ref=f124e98]:
+          - generic [ref=f124e99]: 📠
+          - generic [ref=f124e100]: "Fax: (818) 637-2104"
+        - generic [ref=f124e101]:
+          - generic [ref=f124e102]: ✉️
+          - link "info@amhsinc.com" [ref=f124e103] [cursor=pointer]:
+            - /url: mailto:info@amhsinc.com
+        - generic [ref=f124e104]:
+          - generic [ref=f124e105]: f
+          - link "Facebook / AMHSinc" [ref=f124e106] [cursor=pointer]:
+            - /url: https://www.facebook.com/AMHSinc
+      - generic [ref=f124e107]:
+        - generic [ref=f124e108]:
+          - term [ref=f124e109]: Address
+          - definition [ref=f124e110]: 730 S Central Ave Ste 208Glendale, CA 91204
+        - iframe [ref=f124e112]:
+          
+  - generic [ref=f124e113]:
+    - paragraph [ref=f124e114]: Allied Medical & Health Services, Inc. — All rights reserved.
+    - paragraph [ref=f124e115]: "Office Hours: M/T/Th/F 9am–7pm, Saturday 9am–4pm"

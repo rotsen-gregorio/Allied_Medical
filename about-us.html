@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Allied Medical & Health Services, Inc.</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --surface-alt: #e2e8f0;
+      --surface-strong: #1f2937;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0f62fe;
+      --primary-soft: #dbeafe;
+      --accent: #0f62fe;
+      --border: rgba(15, 23, 42, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f5f7fb;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; }
+    .page {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .brand {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .brand-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: #ffffff;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,0.14);
+      box-shadow: 0 16px 32px rgba(15,23,42,0.1);
+    }
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .brand-text {
+      display: grid;
+      gap: 0.08rem;
+    }
+    .brand-text p:first-child {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .brand-text p:last-child {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    nav a:hover { color: var(--text); }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+      min-width: 210px;
+      padding: 0.5rem 0.4rem 0.4rem;
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: flex; }
+    .nav-dropdown-menu a {
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .nav-dropdown-menu a:hover { background: #f5f7fb; text-decoration: none; color: var(--text); }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .back-link:hover { text-decoration: underline; }
+    .hero {
+      display: grid;
+      gap: 2rem;
+      padding: 2.5rem;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #0f62fe 0%, #0f62fe 100%);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 680px;
+      z-index: 1;
+      color: #f8fafc;
+      display: grid;
+      gap: 1.2rem;
+    }
+    .hero-badge {
+      display: inline-flex;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4vw, 4.25rem);
+      line-height: 0.95;
+    }
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.84);
+      font-size: 1.05rem;
+    }
+    .content-section {
+      margin: 3rem 0;
+    }
+    .content-section h2 {
+      font-size: 2rem;
+      margin: 0 0 1.5rem;
+      color: var(--surface-strong);
+    }
+    .content-section h3 {
+      font-size: 1.3rem;
+      margin: 1.5rem 0 1rem;
+      color: var(--surface-strong);
+    }
+    .content-section p {
+      margin: 1rem 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .content-section ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .content-section li {
+      margin: 0.5rem 0;
+      line-height: 1.8;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .info-card {
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,0.08);
+      padding: 2rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.05);
+    }
+    .info-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      color: var(--surface-strong);
+    }
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+    .contact-block {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-radius: 28px;
+      background: #172c46;
+      color: #fff;
+      display: grid;
+      gap: 1rem;
+    }
+    .contact-block h2 { margin: 0; font-size: 1.5rem; color: #fff; }
+    .contact-block > p { margin: 0; color: rgba(255,255,255,0.82); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .contact-card {
+      display: grid;
+      gap: 1rem;
+      padding: 1.4rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .contact-card h3 {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: #fff;
+      font-size: 0.98rem;
+    }
+    .contact-icon {
+      width: 2.15rem;
+      height: 2.15rem;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-info { display: grid; gap: 0.3rem; }
+    .contact-info p { margin: 0; color: rgba(255,255,255,0.82); font-size: 0.95rem; }
+    .contact-info a, .contact-card a { color: #fff; font-weight: 600; text-decoration: underline; }
+    .address-card {
+      display: grid;
+      gap: 1rem;
+      padding: 1.4rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+    .address-card dt {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    .address-card dd {
+      margin: 0.55rem 0 0;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    .map-container {
+      width: 100%;
+      height: 200px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: #0f172a;
+    }
+    .map-container iframe { width: 100%; height: 100%; border: none; display: block; }
+    .accreditation {
+      background: #f0f9ff;
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    .accreditation h3 {
+      margin-top: 0;
+      color: var(--surface-strong);
+    }
+    .accreditation p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(15,23,42,0.08);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.95rem;
+    }
+    .highlight {
+      background: var(--primary-soft);
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    @media (max-width: 980px) {
+      .hero { padding: 2rem; }
+      .hero h1 { font-size: 3rem; }
+    }
+    @media (max-width: 760px) {
+      .page { padding: 1rem 0 3rem; }
+      header { justify-content: center; text-align: center; }
+      nav { justify-content: center; }
+      .hero { border-radius: 24px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .contact-actions { flex-direction: column; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <img src="amhs-logo.png" alt="AMHS logo" />
+        </div>
+        <div class="brand-text">
+          <p>Allied Medical &amp; Health Services, Inc.</p>
+          <p>Glendale, California | Healthcare career training</p>
+        </div>
+      </div>
+      <nav>
+        <a href="amhsinc_modern_index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="amhsinc_modern_index.html#programs">Programs Offered ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="vocational-nursing.html">Vocational Nursing</a>
+            <a href="phlebotomy-technician.html">Phlebotomy Technician I</a>
+            <a href="nursing-assistant.html">Nursing Assistant</a>
+            <a href="ceu-for-cna.html">CEU for CNA</a>
+          </div>
+        </div>
+        <a href="schedule.html">Schedule</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <a href="amhsinc_modern_index.html" class="back-link">← Back to Home</a>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">About AMHS</span>
+        <h1>Healthcare Education Excellence</h1>
+        <p>Since our founding, Allied Medical & Health Services has been committed to preparing students with the skills and knowledge needed for success in healthcare careers.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Our Mission</h2>
+      <p>The mission of AMHS is to create nursing and allied health educational training programs that prepare students to develop the quality of skills and knowledge they need for patient care in hospitals, long-term care facilities, and healthcare agencies.</p>
+      <p>We are dedicated to fostering opportunities for learning, self-discipline, professionalism, and the ability to meet employer expectations in today's competitive job market. Our courses are designed to equip graduates with the confidence and tools necessary to excel in the medical field.</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Student-Centered Learning</h3>
+          <p>We foster a supportive environment that emphasizes proper attitudes, professional development, and practical skills needed for success.</p>
+        </div>
+        <div class="info-card">
+          <h3>Quality Education</h3>
+          <p>With fast-paced technological development and state-of-the-art training methods, we ensure our graduates are industry-ready.</p>
+        </div>
+        <div class="info-card">
+          <h3>Community Focus</h3>
+          <p>We recognize the healthcare needs of our growing population and uphold the highest standards of academic training and professional ethics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Our Philosophy</h2>
+      <p>AMHS believes in providing allied health education that meets the evolving needs of our growing, longevity-oriented population. We recognize the importance of accountability in healthcare and uphold strong value systems centered on respect for human rights and dignity.</p>
+      <p>With respect for human rights and faith in the highest standards of academic training, combined with technological advancement and modern educational methods, we equip our graduates with the knowledge and confidence to compete successfully in the dynamic medical field.</p>
+    </section>
+
+    <section class="content-section">
+      <h2>Accreditation & Compliance</h2>
+      <div class="accreditation">
+        <h3>BPPE Approval</h3>
+        <p>AMHS School is a private institution approved to operate by the <strong>Bureau for Private Post-Secondary Education (BPPE)</strong>, which is part of the California Department of Consumer Affairs.</p>
+        <p>Our approval means we are compliant with the minimum standards contained in the California Private Postsecondary Education Act of 2009 (as amended) and Division 7.5 of Title 5 of the California Code of Regulations.</p>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-top: 1rem;">
+          <strong>BPPE Contact Information:</strong><br>
+          1747 N. Market Blvd. Ste 225<br>
+          Sacramento, CA 95834<br>
+          Phone: (916) 574-8900 | Toll-free: (888) 370-7589<br>
+          <a href="http://www.bppe.ca.gov" target="_blank" rel="noopener">www.bppe.ca.gov</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Why Choose AMHS?</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Approved Institution</h3>
+          <p>Fully approved by BPPE to operate healthcare training programs in California with regulatory compliance.</p>
+        </div>
+        <div class="info-card">
+          <h3>Experienced Instructors</h3>
+          <p>Our faculty brings real-world healthcare experience and dedication to student success.</p>
+        </div>
+        <div class="info-card">
+          <h3>Career Focused</h3>
+          <p>Every program is designed with employer expectations and market demands in mind for career readiness.</p>
+        </div>
+        <div class="info-card">
+          <h3>Multiple Programs</h3>
+          <p>Choose from Vocational Nursing, Phlebotomy Technician, Nursing Assistant, and CEU programs.</p>
+        </div>
+        <div class="info-card">
+          <h3>Flexible Scheduling</h3>
+          <p>Programs with convenient schedules designed to fit your lifestyle and work commitments.</p>
+        </div>
+        <div class="info-card">
+          <h3>Student Support</h3>
+          <p>From admissions through graduation, our team is here to support your educational journey.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact-block">
+      <h2>Ready to start your healthcare training?</h2>
+      <p>Reach out now for enrollment details, program guidance, and class schedules. Our team is available to help you find the course that fits your career goals.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact</h3>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div class="contact-info">
+              <p>730 S Central Ave Ste 208, Glendale, CA 91204</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div class="contact-info">
+              <a href="tel:8186377871">(818) 637-7871</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📠</span>
+            <div class="contact-info">
+              <p>Fax: (818) 637-2104</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-info">
+              <a href="mailto:info@amhsinc.com">info@amhsinc.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">f</span>
+            <div class="contact-info">
+              <a href="https://www.facebook.com/AMHSinc" target="_blank" rel="noopener">Facebook / AMHSinc</a>
+            </div>
+          </div>
+        </div>
+        <div class="address-card">
+          <div>
+            <dt>Address</dt>
+            <dd>730 S Central Ave Ste 208<br>Glendale, CA 91204</dd>
+          </div>
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.5274897893286!2d-118.25517!3d34.1450!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0b5f5f5f5f5%3A0x0!2s730%20S%20Central%20Ave%2C%20Glendale%2C%20CA%2091204!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Allied Medical &amp; Health Services, Inc. — All rights reserved.</p>
+      <p>730 S Central Ave, Ste 208 | Glendale, CA 91204</p>
+      <p>Office Hours: M/T/Th/F 9am–7pm, Saturday 9am–4pm</p>
+      <p style="flex-basis:100%;display:flex;flex-wrap:wrap;gap:1.25rem;margin:0;">
+        <a href="catalog_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Catalog</a>
+        <a href="spfs_comb.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">School Performance Fact Sheet</a>
+        <a href="arep.pdf" target="_blank" rel="noopener" style="text-decoration:underline;">Annual Report</a>
+        <a href="login.html" style="margin-left:auto;font-size:0.8rem;opacity:0.5;text-decoration:underline;">Admin Login</a>
+      </p>
+    </footer>
+  </main>
+  <script>
+    ['catalog_comb.pdf','spfs_comb.pdf','arep.pdf'].forEach(function(f){
+      fetch(f,{method:'HEAD'}).then(function(r){if(!r.ok)hideDoc(f);}).catch(function(){hideDoc(f);});
+    });
+    function hideDoc(f){var a=document.querySelector('a[href="'+f+'"]');if(a)a.style.display='none';}
+  </script>
+</body>
+</html>

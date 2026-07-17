@@ -1,0 +1,136 @@
+- main [ref=f42e2]:
+  - generic [ref=f42e3]:
+    - generic [ref=f42e4]:
+      - img "AMHS logo" [ref=f42e6]
+      - generic [ref=f42e7]:
+        - paragraph [ref=f42e8]: Allied Medical & Health Services, Inc.
+        - paragraph [ref=f42e9]: Glendale, California | Healthcare career training
+    - navigation [ref=f42e10]:
+      - link "Home" [ref=f42e11] [cursor=pointer]:
+        - /url: amhsinc_modern_index.html
+      - link "Programs Offered ▾" [ref=f42e13] [cursor=pointer]:
+        - /url: amhsinc_modern_index.html#programs
+      - link "About Us" [ref=f42e14] [cursor=pointer]:
+        - /url: about-us.html
+      - link "Contact Us" [ref=f42e15] [cursor=pointer]:
+        - /url: contact-us.html
+  - link "← Back to Home" [ref=f42e16] [cursor=pointer]:
+    - /url: amhsinc_modern_index.html
+  - generic [ref=f42e18]:
+    - generic [ref=f42e19]: Get In Touch
+    - heading "Ready to start your healthcare training?" [level=1] [ref=f42e20]
+    - paragraph [ref=f42e21]: Reach out now for enrollment details, program guidance, and class schedules. Our team is available to help you find the course that fits your career goals.
+  - generic [ref=f42e23]:
+    - generic [ref=f42e24]:
+      - heading "Contact" [level=3] [ref=f42e25]
+      - generic [ref=f42e26]:
+        - generic [ref=f42e27]: 📍
+        - generic [ref=f42e28]:
+          - paragraph [ref=f42e29]: 730 S Central Ave Ste 208
+          - paragraph [ref=f42e30]: Glendale, CA 91204
+      - generic [ref=f42e31]:
+        - generic [ref=f42e32]: 📞
+        - link "(818) 637-7871" [ref=f42e34] [cursor=pointer]:
+          - /url: tel:8186377871
+      - generic [ref=f42e35]:
+        - generic [ref=f42e36]: 📠
+        - paragraph [ref=f42e38]: "Fax: (818) 637-2104"
+      - generic [ref=f42e39]:
+        - generic [ref=f42e40]: ✉️
+        - link "info@amhsinc.com" [ref=f42e42] [cursor=pointer]:
+          - /url: mailto:info@amhsinc.com
+      - generic [ref=f42e43]:
+        - generic [ref=f42e44]: f
+        - link "Facebook / AMHSinc" [ref=f42e46] [cursor=pointer]:
+          - /url: https://www.facebook.com/AMHSinc
+    - generic [ref=f42e47]:
+      - generic [ref=f42e48]:
+        - term [ref=f42e49]: Address
+        - definition [ref=f42e50]: 730 S Central Ave Ste 208Glendale, CA 91204
+      - iframe [ref=f42e52]:
+        
+  - generic [ref=f42e53]:
+    - heading "Contact Form" [level=2] [ref=f42e54]
+    - paragraph [ref=f42e55]: For general inquiries, please fill out the form below and we'll get back to you as soon as possible.
+    - generic [ref=f42e56]:
+      - generic [ref=f42e57]:
+        - generic [ref=f42e58]:
+          - generic [ref=f42e59]: First Name *
+          - textbox "First Name *" [ref=f42e60]
+        - generic [ref=f42e61]:
+          - generic [ref=f42e62]: Last Name *
+          - textbox "Last Name *" [ref=f42e63]
+      - generic [ref=f42e64]:
+        - generic [ref=f42e65]:
+          - generic [ref=f42e66]: Email *
+          - textbox "Email *" [ref=f42e67]
+        - generic [ref=f42e68]:
+          - generic [ref=f42e69]: Mobile Phone *
+          - textbox "Mobile Phone *" [ref=f42e70]
+      - generic [ref=f42e71]:
+        - generic [ref=f42e72]: Company / School
+        - textbox "Company / School" [ref=f42e73]
+      - generic [ref=f42e74]:
+        - generic [ref=f42e75]: Comments / Message *
+        - textbox "Comments / Message *" [ref=f42e76]
+      - generic [ref=f42e77]:
+        - button "Submit Your Message" [ref=f42e78] [cursor=pointer]
+        - button "Reset" [ref=f42e79] [cursor=pointer]
+  - generic [ref=f42e80]:
+    - generic [ref=f42e81]:
+      - heading "Program Coordinators" [level=2] [ref=f42e82]
+      - paragraph [ref=f42e83]: For specific questions about each program, reach out directly to the program coordinator.
+    - generic [ref=f42e84]:
+      - generic [ref=f42e85]:
+        - generic [ref=f42e86]:
+          - generic [ref=f42e87]: Program
+          - heading "Vocational Nursing" [level=3] [ref=f42e88]
+          - paragraph [ref=f42e89]: LVN Coordinator
+        - generic [ref=f42e91]:
+          - generic [ref=f42e92]: ✉️
+          - link "lvn@amhsinc.com" [ref=f42e93] [cursor=pointer]:
+            - /url: mailto:lvn@amhsinc.com
+      - generic [ref=f42e94]:
+        - generic [ref=f42e95]:
+          - generic [ref=f42e96]: Program
+          - heading "Phlebotomy Technician" [level=3] [ref=f42e97]
+          - paragraph [ref=f42e98]: Phlebotomy Coordinator
+        - generic [ref=f42e100]:
+          - generic [ref=f42e101]: ✉️
+          - link "phlebotomy@amhsinc.com" [ref=f42e102] [cursor=pointer]:
+            - /url: mailto:phlebotomy@amhsinc.com
+      - generic [ref=f42e103]:
+        - generic [ref=f42e104]:
+          - generic [ref=f42e105]: Program
+          - heading "Nursing Assistant" [level=3] [ref=f42e106]
+          - paragraph [ref=f42e107]: NA Coordinator
+        - generic [ref=f42e109]:
+          - generic [ref=f42e110]: ✉️
+          - link "cna@amhsinc.com" [ref=f42e111] [cursor=pointer]:
+            - /url: mailto:cna@amhsinc.com
+      - generic [ref=f42e112]:
+        - generic [ref=f42e113]:
+          - generic [ref=f42e114]: Department
+          - heading "School Administration" [level=3] [ref=f42e115]
+          - paragraph [ref=f42e116]: School Administrator
+        - generic [ref=f42e118]:
+          - generic [ref=f42e119]: ✉️
+          - link "admin@amhsinc.com" [ref=f42e120] [cursor=pointer]:
+            - /url: mailto:admin@amhsinc.com
+    - link "View full coordinator page →" [ref=f42e122] [cursor=pointer]:
+      - /url: program-coordinators.html
+  - generic [ref=f42e123]:
+    - heading "Office Hours" [level=2] [ref=f42e124]
+    - generic [ref=f42e125]:
+      - generic [ref=f42e126]:
+        - heading "Monday, Tuesday, Thursday, Friday" [level=3] [ref=f42e127]
+        - paragraph [ref=f42e128]: 9:00 AM - 7:00 PM
+      - generic [ref=f42e129]:
+        - heading "Saturday" [level=3] [ref=f42e130]
+        - paragraph [ref=f42e131]: 9:00 AM - 4:00 PM
+      - generic [ref=f42e132]:
+        - heading "Sunday" [level=3] [ref=f42e133]
+        - paragraph [ref=f42e134]: Closed
+  - generic [ref=f42e135]:
+    - paragraph [ref=f42e136]: Allied Medical & Health Services, Inc. — All rights reserved.
+    - paragraph [ref=f42e137]: 730 S Central Ave, Ste 208 | Glendale, CA 91204
