@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /admin-upload.html
+
+Sitemap: https://rotsen-gregorio.github.io/Allied_Medical/sitemap.xml
